@@ -15,6 +15,10 @@
 *.controller merge=unityyamlmerge eol=lf
 
 
+# Note: Unity terrain assets must have "-Terrain" suffix. 
+*-[Tt]errain.asset -unityyaml -text 
+Assets/[Tt]errains/*.asset -unityyaml -text
+
 ## git-lfs ##
 
 #Image
