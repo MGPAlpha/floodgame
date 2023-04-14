@@ -39,7 +39,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DepthDistance: 6.47
+    - _DepthDistance: 5.01
     - _DepthStrength: 0.01
     - _NormalStrength: 0.131
     - _NormalTiling: 21
