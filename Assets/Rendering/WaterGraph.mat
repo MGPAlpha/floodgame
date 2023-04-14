@@ -42,7 +42,7 @@ Material:
     - _DepthDistance: 6.47
     - _DepthStrength: 0.01
     - _NormalStrength: 0.131
-    - _NormalTiling: 11.09
+    - _NormalTiling: 21
     - _PanSpeed: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0
