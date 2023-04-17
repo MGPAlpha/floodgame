@@ -127,6 +127,9 @@ namespace StarterAssets
 			// set sphere position, with offset
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
 			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
+
+			swimming = transform.position.y + waterLevelOffset < waterLevelReference.position.y;
+			if (swimming) Grounded = true;
 		}
 
 		private void CameraRotation()
@@ -151,6 +154,10 @@ namespace StarterAssets
 			}
 		}
 
+		bool swimming = false;
+		[SerializeField] private Transform waterLevelReference;
+		[SerializeField] private float waterLevelOffset;
+
 		private void Move()
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
@@ -164,6 +171,7 @@ namespace StarterAssets
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
+			if (swimming) currentHorizontalSpeed = new Vector3(_controller.velocity.x, _controller.velocity.y - _verticalVelocity, _controller.velocity.z).magnitude;
 
 			float speedOffset = 0.1f;
 			float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
@@ -191,7 +199,11 @@ namespace StarterAssets
 			if (_input.move != Vector2.zero)
 			{
 				// move
-				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+				if (!swimming) {
+					inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+				} else {
+					inputDirection = transform.right.normalized * _input.move.x + Camera.main.transform.forward.normalized * _input.move.y;
+				}
 			}
 
 			// move the player
@@ -206,7 +218,7 @@ namespace StarterAssets
 				_fallTimeoutDelta = FallTimeout;
 
 				// stop our velocity dropping infinitely when grounded
-				if (_verticalVelocity < 0.0f)
+				if (_verticalVelocity < 0.0f && !swimming)
 				{
 					_verticalVelocity = -2f;
 				}
@@ -216,6 +228,7 @@ namespace StarterAssets
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+					_input.jump = false;
 				}
 
 				// jump timeout
@@ -242,8 +255,12 @@ namespace StarterAssets
 			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
 			if (_verticalVelocity < _terminalVelocity)
 			{
-				_verticalVelocity += Gravity * Time.deltaTime;
+				if (!swimming)
+					_verticalVelocity += Gravity * Time.deltaTime;
+				else _verticalVelocity = Mathf.MoveTowards(_verticalVelocity, 0, -Gravity * Time.deltaTime);
 			}
+
+			print(_verticalVelocity);
 		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
