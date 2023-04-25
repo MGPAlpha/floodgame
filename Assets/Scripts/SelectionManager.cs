@@ -23,6 +23,7 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private StarterAssets.FirstPersonController controller;
     [SerializeField] private float pickUpTime = .5f;
     [SerializeField] private Light flashlight;
+    [SerializeField] private Light itemSpotlight;
 
     bool selectionComplete = false;
     Vector2 selectedRotation = new Vector2();
@@ -54,7 +55,8 @@ public class SelectionManager : MonoBehaviour
             float moveProgress = moveTimer / pickUpTime;
             targetTransform.position = Vector3.Lerp(selectedDefaultPos, objectViewPos.position, moveProgress);
             targetTransform.rotation = Quaternion.Lerp(selectedDefaultRot, objectViewPos.rotation, moveProgress);
-            flashlight.intensity = Mathf.Lerp(defaultLightIntensity, defaultLightIntensity/3, moveProgress);
+            flashlight.intensity = Mathf.Lerp(defaultLightIntensity, 0, moveProgress);
+            itemSpotlight.intensity = Mathf.Lerp(0, 1, moveProgress);
             Rect r = new Rect(0, 0, Mathf.Lerp(1, .7f, moveProgress), 1);
             Camera.main.rect = r;
             UIInfoPanel.Main.SetVisibility(moveProgress);
@@ -63,7 +65,8 @@ public class SelectionManager : MonoBehaviour
         }
         targetTransform.position = objectViewPos.position;
         targetTransform.rotation = objectViewPos.rotation;
-        flashlight.intensity = defaultLightIntensity/3;
+        flashlight.intensity = 0;
+        itemSpotlight.intensity = 1;
         Camera.main.rect = new Rect(0, 0, .7f, 1);
         UIInfoPanel.Main.SetVisibility(1);
         selectedRotation = Vector2.zero;
@@ -84,7 +87,8 @@ public class SelectionManager : MonoBehaviour
             float moveProgress = moveTimer / pickUpTime;
             targetTransform.position = Vector3.Lerp(startPos, selectedDefaultPos, moveProgress);
             targetTransform.rotation = Quaternion.Lerp(startRot, selectedDefaultRot, moveProgress);
-            flashlight.intensity = Mathf.Lerp(defaultLightIntensity/3, defaultLightIntensity, moveProgress);
+            flashlight.intensity = Mathf.Lerp(0, defaultLightIntensity, moveProgress);
+            itemSpotlight.intensity = Mathf.Lerp(1, 0, moveProgress);
             Rect r = new Rect(0, 0, Mathf.Lerp(.7f, 1, moveProgress), 1);
             Camera.main.rect = r;
             UIInfoPanel.Main.SetVisibility(1-moveProgress);
@@ -94,6 +98,7 @@ public class SelectionManager : MonoBehaviour
         targetTransform.position = selectedDefaultPos;
         targetTransform.rotation = selectedDefaultRot;
         flashlight.intensity = defaultLightIntensity;
+        itemSpotlight.intensity = 0;
         Camera.main.rect = new Rect(0, 0, 1, 1);
         UIInfoPanel.Main.SetVisibility(0);
         UITarget.Main.visible = true;
@@ -118,7 +123,8 @@ public class SelectionManager : MonoBehaviour
             float moveProgress = moveTimer / pickUpTime;
             targetTransform.position = Vector3.Lerp(startPos, objectTakePos.position, moveProgress);
             // targetTransform.rotation = Quaternion.Lerp(startRot, selectedDefaultRot, moveProgress);
-            flashlight.intensity = Mathf.Lerp(defaultLightIntensity/3, defaultLightIntensity, moveProgress);
+            flashlight.intensity = Mathf.Lerp(0, defaultLightIntensity, moveProgress);
+            itemSpotlight.intensity = Mathf.Lerp(1, 0, moveProgress);
             Rect r = new Rect(0, 0, Mathf.Lerp(.7f, 1, moveProgress), 1);
             Camera.main.rect = r;
             UIInfoPanel.Main.SetVisibility(1-moveProgress);
@@ -128,6 +134,7 @@ public class SelectionManager : MonoBehaviour
         targetTransform.position = selectedDefaultPos;
         // targetTransform.rotation = selectedDefaultRot;
         flashlight.intensity = defaultLightIntensity;
+        itemSpotlight.intensity = 0;
         Camera.main.rect = new Rect(0, 0, 1, 1);
         UIInfoPanel.Main.SetVisibility(0);
         UITarget.Main.visible = true;
