@@ -260,7 +260,7 @@ namespace StarterAssets
 				else _verticalVelocity = Mathf.MoveTowards(_verticalVelocity, 0, -Gravity * Time.deltaTime);
 			}
 
-			print(_verticalVelocity);
+			// print(_verticalVelocity);
 		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
