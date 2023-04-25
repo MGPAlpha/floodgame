@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIItemChecklist : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class UIItemChecklist : MonoBehaviour
     }
 
     [SerializeField] private Button finishButton;
+    private TextMeshProUGUI finishButtonText;
 
     List<ChecklistItem> items = new List<ChecklistItem>();
     CanvasGroup _cg;
@@ -35,9 +38,29 @@ public class UIItemChecklist : MonoBehaviour
         foreach (ChecklistItem item in required) {
             if (!item.IsAcquired()) {
                 finishButton.interactable = false;
+                finishButtonText.text = "Recover All Required Items";
                 break;
             }
         }
+
+        if (finishButton.interactable) {
+            //Try if player is over boat
+            finishButton.interactable = false;
+            StarterAssets.FirstPersonController player = GameObject.FindObjectOfType<StarterAssets.FirstPersonController>();
+            if (Physics.Raycast(player.transform.position, Vector3.down, out RaycastHit hit, 5, LayerMask.GetMask(new string[]{"Default"}))) {
+                if (hit.collider.tag == "Finish") {
+                    finishButton.interactable = true;
+                }
+            }
+
+            if (finishButton.interactable) {
+                finishButtonText.text = "Finish Recovery";
+            } else {
+                finishButtonText.text = "Return to Boat to Finish Recovery";
+            }
+        }
+
+        
 
         ItemDescriptionPanel.Main.Deactivate();
     }
@@ -48,6 +71,10 @@ public class UIItemChecklist : MonoBehaviour
         _cg.blocksRaycasts = false;
     }
 
+    public void MainMenuButton() {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +83,8 @@ public class UIItemChecklist : MonoBehaviour
         _cg.alpha = 0;
         _cg.interactable = false;
         _cg.blocksRaycasts = false;
+
+        finishButtonText = finishButton.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     // Update is called once per frame

@@ -238,10 +238,10 @@ public class SelectionManager : MonoBehaviour
             Quaternion worldRot = objectViewPos.parent.rotation * defaultRot;
             selected.transform.rotation = worldRot;
         }
-        if (selectionComplete && Input.GetKeyDown(KeyCode.Escape)) {
+        if (selectionComplete && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))) {
             StartCoroutine(DeselectItem());
         }
-        if (listComplete && Input.GetKeyDown(KeyCode.Escape)) {
+        if (listComplete && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.E))) {
             StartCoroutine(CloseChecklist());
         }
         if (!selected && !listMode && Input.GetKeyDown(KeyCode.E)) {
