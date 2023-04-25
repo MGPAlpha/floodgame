@@ -5,8 +5,21 @@ using UnityEngine;
 public class SelectionManager : MonoBehaviour
 {
 
+    public static SelectionManager Main {get; private set;}
+
+    public static List<string> takenObjects {get; private set;} = new List<string>();
+
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    private void Awake()
+    {
+        Main = this;
+    }
+
     [SerializeField] private LayerMask selectableLayers;
     [SerializeField] private Transform objectViewPos;
+    [SerializeField] private Transform objectTakePos;
     [SerializeField] private StarterAssets.FirstPersonController controller;
     [SerializeField] private float pickUpTime = .5f;
     [SerializeField] private Light flashlight;
@@ -33,6 +46,8 @@ public class SelectionManager : MonoBehaviour
         selectedDefaultPos = targetTransform.position;
         selectedDefaultRot = targetTransform.rotation;
         defaultLightIntensity = flashlight.intensity;
+
+        ItemDescriptionPanel.Main.Activate(target);
 
         float moveTimer = 0;
         while (moveTimer < pickUpTime) {
@@ -82,6 +97,42 @@ public class SelectionManager : MonoBehaviour
         Camera.main.rect = new Rect(0, 0, 1, 1);
         UIInfoPanel.Main.SetVisibility(0);
         UITarget.Main.visible = true;
+        selected = null;
+        controller.enabled = true;
+    }
+
+    public void TakeItem() {
+        StartCoroutine(TakeItemCoroutine());
+    }
+
+    private IEnumerator TakeItemCoroutine() {
+        if (!selected) yield break;
+        selectionComplete = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Transform targetTransform = selected.transform;
+        Vector3 startPos = targetTransform.position;
+        Quaternion startRot = targetTransform.rotation;
+
+        float moveTimer = 0;
+        while (moveTimer < pickUpTime) {
+            float moveProgress = moveTimer / pickUpTime;
+            targetTransform.position = Vector3.Lerp(startPos, objectTakePos.position, moveProgress);
+            // targetTransform.rotation = Quaternion.Lerp(startRot, selectedDefaultRot, moveProgress);
+            flashlight.intensity = Mathf.Lerp(defaultLightIntensity/3, defaultLightIntensity, moveProgress);
+            Rect r = new Rect(0, 0, Mathf.Lerp(.7f, 1, moveProgress), 1);
+            Camera.main.rect = r;
+            UIInfoPanel.Main.SetVisibility(1-moveProgress);
+            moveTimer += Time.deltaTime;
+            yield return null;
+        }
+        targetTransform.position = selectedDefaultPos;
+        // targetTransform.rotation = selectedDefaultRot;
+        flashlight.intensity = defaultLightIntensity;
+        Camera.main.rect = new Rect(0, 0, 1, 1);
+        UIInfoPanel.Main.SetVisibility(0);
+        UITarget.Main.visible = true;
+        takenObjects.Add(selected.ItemName);
+        selected.gameObject.SetActive(false);
         selected = null;
         controller.enabled = true;
     }
