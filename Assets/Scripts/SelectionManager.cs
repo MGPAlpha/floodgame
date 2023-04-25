@@ -7,7 +7,7 @@ public class SelectionManager : MonoBehaviour
 
     public static SelectionManager Main {get; private set;}
 
-    public static List<string> takenObjects {get; private set;} = new List<string>();
+    public static List<SelectableItem> takenObjects {get; private set;} = new List<SelectableItem>();
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -28,6 +28,9 @@ public class SelectionManager : MonoBehaviour
     bool selectionComplete = false;
     Vector2 selectedRotation = new Vector2();
     SelectableItem selected;
+
+    bool listComplete = false;
+    bool listMode = false;
 
     // Start is called before the first frame update
     void Start()
@@ -146,9 +149,68 @@ public class SelectionManager : MonoBehaviour
         Camera.main.rect = new Rect(0, 0, 1, 1);
         UIInfoPanel.Main.SetVisibility(0);
         UITarget.Main.visible = true;
-        takenObjects.Add(selected.ItemName);
+        takenObjects.Add(selected);
         selected.gameObject.SetActive(false);
         selected = null;
+        controller.enabled = true;
+    }
+
+    IEnumerator OpenChecklist() {
+        controller.enabled = false;
+        UITarget.Main.visible = false;
+
+        listMode = true;
+
+        UIItemChecklist.Main.Activate();
+
+        float moveTimer = 0;
+        while (moveTimer < pickUpTime) {
+            float moveProgress = moveTimer / pickUpTime;
+            Rect r = new Rect(0, 0, Mathf.Lerp(1, .7f, moveProgress), 1);
+            Camera.main.rect = r;
+            UIInfoPanel.Main.SetVisibility(moveProgress);
+            moveTimer += Time.deltaTime;
+            yield return null;
+        }
+        Camera.main.rect = new Rect(0, 0, .7f, 1);
+        UIInfoPanel.Main.SetVisibility(1);
+        selectedRotation = Vector2.zero;
+        Cursor.lockState = CursorLockMode.None;
+        listComplete = true;
+    }
+
+    IEnumerator CloseChecklist() {
+        listComplete = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        // Transform targetTransform = selected.transform;
+        // Vector3 startPos = targetTransform.position;
+        // Quaternion startRot = targetTransform.rotation;
+        // Vector3 startScale = targetTransform.localScale;
+
+        float moveTimer = 0;
+        while (moveTimer < pickUpTime) {
+            float moveProgress = moveTimer / pickUpTime;
+            // targetTransform.position = Vector3.Lerp(startPos, selectedDefaultPos, moveProgress);
+            // targetTransform.rotation = Quaternion.Lerp(startRot, selectedDefaultRot, moveProgress);
+            // targetTransform.localScale = Vector3.Lerp(startScale, selectedDefaultScale, moveProgress);
+            // flashlight.intensity = Mathf.Lerp(0, defaultLightIntensity, moveProgress);
+            // itemSpotlight.intensity = Mathf.Lerp(1, 0, moveProgress);
+            Rect r = new Rect(0, 0, Mathf.Lerp(.7f, 1, moveProgress), 1);
+            Camera.main.rect = r;
+            UIInfoPanel.Main.SetVisibility(1-moveProgress);
+            moveTimer += Time.deltaTime;
+            yield return null;
+        }
+        // targetTransform.position = selectedDefaultPos;
+        // targetTransform.rotation = selectedDefaultRot;
+        // targetTransform.localScale = selectedDefaultScale;
+        // flashlight.intensity = defaultLightIntensity;
+        // itemSpotlight.intensity = 0;
+        Camera.main.rect = new Rect(0, 0, 1, 1);
+        UIInfoPanel.Main.SetVisibility(0);
+        UITarget.Main.visible = true;
+        // selected = null;
+        listMode = false;
         controller.enabled = true;
     }
 
@@ -178,6 +240,12 @@ public class SelectionManager : MonoBehaviour
         }
         if (selectionComplete && Input.GetKeyDown(KeyCode.Escape)) {
             StartCoroutine(DeselectItem());
+        }
+        if (listComplete && Input.GetKeyDown(KeyCode.Escape)) {
+            StartCoroutine(CloseChecklist());
+        }
+        if (!selected && !listMode && Input.GetKeyDown(KeyCode.E)) {
+            StartCoroutine(OpenChecklist());
         }
     }
 }

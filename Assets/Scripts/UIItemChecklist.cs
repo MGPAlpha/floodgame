@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-public class ItemDescriptionPanel : MonoBehaviour
+public class UIItemChecklist : MonoBehaviour
 {
 
-    public static ItemDescriptionPanel Main {get; private set;}
+    public static UIItemChecklist Main {get; private set;}
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -17,18 +16,30 @@ public class ItemDescriptionPanel : MonoBehaviour
         Main = this;
     }
 
-    [SerializeField] private TextMeshProUGUI itemNameText;
-    [SerializeField] private TextMeshProUGUI itemDescText;
+    [SerializeField] private Button finishButton;
 
-    private CanvasGroup _cg;
+    List<ChecklistItem> items = new List<ChecklistItem>();
+    CanvasGroup _cg;
 
-    public void Activate(SelectableItem item) {
-        itemNameText.text = item.ItemName;
-        itemDescText.text = item.ItemDescription;
+    [SerializeField] private List<ChecklistItem> required;
+
+    public void Activate() {
+        foreach (ChecklistItem item in items) {
+            item.UpdateDisplay();
+        }
         _cg.alpha = 1;
         _cg.interactable = true;
         _cg.blocksRaycasts = true;
-        UIItemChecklist.Main.Deactivate();
+
+        finishButton.interactable = true;
+        foreach (ChecklistItem item in required) {
+            if (!item.IsAcquired()) {
+                finishButton.interactable = false;
+                break;
+            }
+        }
+
+        ItemDescriptionPanel.Main.Deactivate();
     }
 
     public void Deactivate() {
@@ -37,14 +48,10 @@ public class ItemDescriptionPanel : MonoBehaviour
         _cg.blocksRaycasts = false;
     }
 
-    public void TakeItemButton() {
-        _cg.interactable = false;
-        SelectionManager.Main.TakeItem();
-    }
-    
     // Start is called before the first frame update
     void Start()
     {
+        items = new List<ChecklistItem>(GetComponentsInChildren<ChecklistItem>(true));
         _cg = GetComponent<CanvasGroup>();
         _cg.alpha = 0;
         _cg.interactable = false;
