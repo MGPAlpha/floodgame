@@ -37,6 +37,7 @@ public class SelectionManager : MonoBehaviour
 
     Vector3 selectedDefaultPos;
     Quaternion selectedDefaultRot;
+    Vector3 selectedDefaultScale;
     float defaultLightIntensity;
 
     IEnumerator SelectItem(SelectableItem target) {
@@ -47,6 +48,8 @@ public class SelectionManager : MonoBehaviour
         selectedDefaultPos = targetTransform.position;
         selectedDefaultRot = targetTransform.rotation;
         defaultLightIntensity = flashlight.intensity;
+        selectedDefaultScale = targetTransform.localScale;
+        Vector3 targetScale = targetTransform.localScale * target.viewScaleFactor;
 
         ItemDescriptionPanel.Main.Activate(target);
 
@@ -55,6 +58,7 @@ public class SelectionManager : MonoBehaviour
             float moveProgress = moveTimer / pickUpTime;
             targetTransform.position = Vector3.Lerp(selectedDefaultPos, objectViewPos.position, moveProgress);
             targetTransform.rotation = Quaternion.Lerp(selectedDefaultRot, objectViewPos.rotation, moveProgress);
+            targetTransform.localScale = Vector3.Lerp(selectedDefaultScale, targetScale, moveProgress);
             flashlight.intensity = Mathf.Lerp(defaultLightIntensity, 0, moveProgress);
             itemSpotlight.intensity = Mathf.Lerp(0, 1, moveProgress);
             Rect r = new Rect(0, 0, Mathf.Lerp(1, .7f, moveProgress), 1);
@@ -65,6 +69,7 @@ public class SelectionManager : MonoBehaviour
         }
         targetTransform.position = objectViewPos.position;
         targetTransform.rotation = objectViewPos.rotation;
+        targetTransform.localScale = targetScale;
         flashlight.intensity = 0;
         itemSpotlight.intensity = 1;
         Camera.main.rect = new Rect(0, 0, .7f, 1);
@@ -81,12 +86,14 @@ public class SelectionManager : MonoBehaviour
         Transform targetTransform = selected.transform;
         Vector3 startPos = targetTransform.position;
         Quaternion startRot = targetTransform.rotation;
+        Vector3 startScale = targetTransform.localScale;
 
         float moveTimer = 0;
         while (moveTimer < pickUpTime) {
             float moveProgress = moveTimer / pickUpTime;
             targetTransform.position = Vector3.Lerp(startPos, selectedDefaultPos, moveProgress);
             targetTransform.rotation = Quaternion.Lerp(startRot, selectedDefaultRot, moveProgress);
+            targetTransform.localScale = Vector3.Lerp(startScale, selectedDefaultScale, moveProgress);
             flashlight.intensity = Mathf.Lerp(0, defaultLightIntensity, moveProgress);
             itemSpotlight.intensity = Mathf.Lerp(1, 0, moveProgress);
             Rect r = new Rect(0, 0, Mathf.Lerp(.7f, 1, moveProgress), 1);
@@ -97,6 +104,7 @@ public class SelectionManager : MonoBehaviour
         }
         targetTransform.position = selectedDefaultPos;
         targetTransform.rotation = selectedDefaultRot;
+        targetTransform.localScale = selectedDefaultScale;
         flashlight.intensity = defaultLightIntensity;
         itemSpotlight.intensity = 0;
         Camera.main.rect = new Rect(0, 0, 1, 1);
