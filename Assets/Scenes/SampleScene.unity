@@ -195,7 +195,7 @@ Transform:
   m_Children:
   - {fileID: 578680781}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 88.616, y: 0, z: 0}
 --- !u!1001 &43161228
 PrefabInstance:
@@ -452,7 +452,7 @@ Transform:
   m_Children:
   - {fileID: 1228654625}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &45773563
 CapsuleCollider:
@@ -568,6 +568,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4875674823099666420}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &194257118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194257121}
+  - component: {fileID: 194257120}
+  - component: {fileID: 194257119}
+  m_Layer: 6
+  m_Name: Art3Selectable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &194257119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194257118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1a4d060c98a725bbb5e1ab11771983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ItemName>k__BackingField: Polynesian Woman with Children (1901) by Paul Gauguin
+  <ItemDescription>k__BackingField: "Henri Paul Gauguin (1848\u20131903) was one
+    of the most influential Post-Impressionist artists. Gauguin's experimental use
+    of color and stark contrasts spearheaded the Synthetism movement, which regarded
+    form and color as equally important. Most of his paintings depict people or landscapes
+    from French Polynesia since he spent many years in that region in search of inspiration.
+    His artistic experiments influenced many avant-garde movements in the early 20th
+    century as well as modern artists such as Pablo Picasso and Henri Matisse."
+  <viewScaleFactor>k__BackingField: 0.35
+--- !u!65 &194257120
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194257118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.55, y: 0.68914586, z: 0.06072965}
+  m_Center: {x: 0, y: -0.01, z: 0}
+--- !u!4 &194257121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194257118}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 502.354, y: 79.218, z: 498.125}
+  m_LocalScale: {x: 1.1856003, y: 1.1856, z: 1.1856003}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1981470219}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &212396166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4905328112178596341, guid: 51ee70d735b9c11449644807679eb427,
@@ -1095,7 +1163,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -1633,7 +1701,7 @@ Transform:
   m_Children:
   - {fileID: 348196723}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -270, y: 0, z: 0}
 --- !u!1 &704941057
 GameObject:
@@ -1786,7 +1854,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &849980641
 GameObject:
@@ -1820,7 +1888,7 @@ Transform:
   - {fileID: 1327904244}
   - {fileID: 2141496610}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &891265541 stripped
 Transform:
@@ -1920,7 +1988,7 @@ Transform:
   m_Children:
   - {fileID: 1853156033}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &977724598
 GameObject:
@@ -2473,7 +2541,7 @@ RectTransform:
   - {fileID: 704941058}
   - {fileID: 220283099}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2920,8 +2988,128 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1304970183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1647311097}
+    m_Modifications:
+    - target: {fileID: 203042579633707332, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 997277066298755187, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820531362852834589, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007402975243622474, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090726114970410165, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_Name
+      value: Art2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090726114970410165, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381814315952802448, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11800639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11800639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11800639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8fd4512ac4b39cd7892192a9a36770c4, type: 3}
+--- !u!4 &1316436699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7819429650967043644, guid: 8fd4512ac4b39cd7892192a9a36770c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1304970183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317215294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +3142,7 @@ Transform:
   m_Children:
   - {fileID: 891265541}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!136 &1317215298
 CapsuleCollider:
@@ -3211,6 +3399,90 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1465525571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 194257121}
+    m_Modifications:
+    - target: {fileID: 4332828951408158227, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_Name
+      value: Art3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11800639
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11800639
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11800639
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2018d4bfe3dec85bfb944137dc78984a, type: 3}
 --- !u!114 &1578018893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3395,8 +3667,76 @@ Transform:
   m_Children:
   - {fileID: 212396166}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1647311094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647311097}
+  - component: {fileID: 1647311096}
+  - component: {fileID: 1647311095}
+  m_Layer: 6
+  m_Name: Art2Selectable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1647311095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647311094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1a4d060c98a725bbb5e1ab11771983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ItemName>k__BackingField: The Large Tree (1891) by Paul Gauguin
+  <ItemDescription>k__BackingField: "Henri Paul Gauguin (1848\u20131903) was one
+    of the most influential Post-Impressionist artists. Gauguin's experimental use
+    of color and stark contrasts spearheaded the Synthetism movement, which regarded
+    form and color as equally important. Most of his paintings depict people or landscapes
+    from French Polynesia since he spent many years in that region in search of inspiration.
+    His artistic experiments influenced many avant-garde movements in the early 20th
+    century as well as modern artists such as Pablo Picasso and Henri Matisse."
+  <viewScaleFactor>k__BackingField: 0.35
+--- !u!65 &1647311096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647311094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8521742, y: 0.68914586, z: 0.06072965}
+  m_Center: {x: 0, y: -0.01, z: 0}
+--- !u!4 &1647311097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647311094}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 502.354, y: 79.218, z: 499.523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1316436699}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1652064520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3460,7 +3800,78 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1710127286 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1962549321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1767666053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767666056}
+  - component: {fileID: 1767666055}
+  - component: {fileID: 1767666054}
+  m_Layer: 6
+  m_Name: Art1Selectable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1767666054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767666053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5156665, y: 1.1139603, z: 0.09208353}
+  m_Center: {x: 0.009378672, y: 0.03, z: -0.046774186}
+--- !u!114 &1767666055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767666053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1a4d060c98a725bbb5e1ab11771983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ItemName>k__BackingField: Art 1
+  <ItemDescription>k__BackingField: Art in Tuvalu culture includes various forms
+    of expression such as music, dance, weaving, carving, and painting. Many of these
+    art forms are deeply rooted in tradition and are passed down from generation
+    to generation.
+  <viewScaleFactor>k__BackingField: 0.25
+--- !u!4 &1767666056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767666053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 503.3955, y: 79.15, z: 501.55048}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1710127286}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1800263637
 GameObject:
@@ -3710,7 +4121,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918101059
 GameObject:
@@ -3847,6 +4258,125 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918101059}
   m_CullTransparentMesh: 1
+--- !u!1001 &1962549321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1767666056}
+    m_Modifications:
+    - target: {fileID: 939251990520177494, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720568991165773796, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: -0.18999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.085
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00009261072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.70688444
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00009249151
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70732915
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -89.964
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466883940235026880, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550611114153627082, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597719466953547265, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_Name
+      value: Art1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597719466953547265, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872331537501602297, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193143103768942470, guid: 8cef1003b45e2e1e08af90d83320743c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8cef1003b45e2e1e08af90d83320743c, type: 3}
 --- !u!1 &1962663499
 GameObject:
   m_ObjectHideFlags: 0
@@ -4188,6 +4718,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &1981470219 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4877547940499411884, guid: 2018d4bfe3dec85bfb944137dc78984a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1465525571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1997093340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4395,7 +4931,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68f113941a45777dbbb0deab6256de93,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68f113941a45777dbbb0deab6256de93,
         type: 3}
@@ -4674,7 +5210,7 @@ PrefabInstance:
     - target: {fileID: 8063073397250431797, guid: f0271df749728104eac22c3d897fd8ce,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8063073397250431797, guid: f0271df749728104eac22c3d897fd8ce,
         type: 3}
@@ -4758,7 +5294,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -4907,7 +5443,7 @@ PrefabInstance:
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -5013,7 +5549,7 @@ Transform:
   m_Children:
   - {fileID: 2114512496}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 96.58, y: 15.868, z: 10.061}
 --- !u!65 &5918216961226421144
 BoxCollider:
@@ -5043,7 +5579,7 @@ PrefabInstance:
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
