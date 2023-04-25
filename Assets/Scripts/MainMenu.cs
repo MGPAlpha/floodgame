@@ -12,7 +12,17 @@ public class MainMenu : MonoBehaviour
     }
 
     public void StartButton() {
+        SceneManager.LoadScene("Intro");
+    }
+
+    public void LoadMainScene() {
+        SelectionManager.takenObjects.Clear();
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void MainMenuButton() {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitButton() {

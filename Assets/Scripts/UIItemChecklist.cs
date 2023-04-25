@@ -75,6 +75,11 @@ public class UIItemChecklist : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void FinishButton() {
+        SelectionManager.LoadTakenIds();
+        SceneManager.LoadScene("Outro");
+    }
+
     // Start is called before the first frame update
     void Start()
     {

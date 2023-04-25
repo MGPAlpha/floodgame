@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemName>k__BackingField: Grandmother's Jewelry
-  <ItemId>k__BackingField: defaultId
+  <ItemId>k__BackingField: pendant
   <ItemDescription>k__BackingField: 'A type of metal jewelry that has become popular
     in Tuvalu is the "kuka''anga," which is a type of metal bangle, pendant, or bracelet.
     Kuka''anga are often made from copper or brass and feature intricate designs
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemName>k__BackingField: Polynesian Woman with Children (1901) by Paul Gauguin
-  <ItemId>k__BackingField: defaultId
+  <ItemId>k__BackingField: art3
   <ItemDescription>k__BackingField: "Henri Paul Gauguin (1848\u20131903) was one
     of the most influential Post-Impressionist artists. Gauguin's experimental use
     of color and stark contrasts spearheaded the Synthetism movement, which regarded
@@ -3218,7 +3218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemName>k__BackingField: Daughter's Birth Certificate
-  <ItemId>k__BackingField: defaultId
+  <ItemId>k__BackingField: birthcertificate
   <ItemDescription>k__BackingField: 'In Tuvalu, birth certificates are issued by
     the Registrar of Births, Deaths, and Marriages, which is part of the Ministry
     of Home Affairs, Immigration, and Labour. The birth certificate is an official
@@ -4151,7 +4151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemName>k__BackingField: Polynesian Sculpture
-  <ItemId>k__BackingField: defaultId
+  <ItemId>k__BackingField: sculpture
   <ItemDescription>k__BackingField: 'Tuvalu Polynesian sculptures, also known as
     tufuga fai fale or tufuga ta tatau, are traditional sculptures and carvings that
     are created by skilled artists in Tuvalu. These sculptures are made from a variety
@@ -6359,7 +6359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemName>k__BackingField: Fishing Pole
-  <ItemId>k__BackingField: defaultId
+  <ItemId>k__BackingField: fishingpole
   <ItemDescription>k__BackingField: 'Fishing is an important part of Tuvalu culture
     and a significant source of food and livelihood for many Tuvaluans. Traditional
     fishing in Tuvalu is done using various types of fishing gear, including fishing
@@ -7201,7 +7201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemName>k__BackingField: Poem
-  <ItemId>k__BackingField: defaultId
+  <ItemId>k__BackingField: poem
   <ItemDescription>k__BackingField: "A traditional Tuvaluan poem called \"Te Vaka
     Fakaholo\" (The Canoe of Life) attributed to an unknown author:\n\t\"Te vaka
     fakaholo\n\tI te tau fakapitoa\n\tKa moana pukepuke e pupula mai ana\n\tKi luga\n\tI
@@ -7319,7 +7319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemName>k__BackingField: Children's Doll
-  <ItemId>k__BackingField: defaultId
+  <ItemId>k__BackingField: doll
   <ItemDescription>k__BackingField: 'In Tuvalu culture, children''s dolls are often
     made using locally sourced materials such as coconut husks, pandanus leaves,
     and other natural materials. These dolls are usually made by hand and are designed
@@ -7673,7 +7673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemName>k__BackingField: The Large Tree (1891) by Paul Gauguin
-  <ItemId>k__BackingField: defaultId
+  <ItemId>k__BackingField: art2
   <ItemDescription>k__BackingField: "Henri Paul Gauguin (1848\u20131903) was one
     of the most influential Post-Impressionist artists. Gauguin's experimental use
     of color and stark contrasts spearheaded the Synthetism movement, which regarded
@@ -8087,8 +8087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1a4d060c98a725bbb5e1ab11771983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ItemName>k__BackingField: Art 1
-  <ItemId>k__BackingField: defaultId
+  <ItemName>k__BackingField: Painting
+  <ItemId>k__BackingField: art1
   <ItemDescription>k__BackingField: Art in Tuvalu culture includes various forms
     of expression such as music, dance, weaving, carving, and painting. Many of these
     art forms are deeply rooted in tradition and are passed down from generation
@@ -8963,9 +8963,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ItemDescriptionPanel, Assembly-CSharp
-        m_MethodName: TakeItemButton
+      - m_Target: {fileID: 577702763}
+        m_TargetAssemblyTypeName: UIItemChecklist, Assembly-CSharp
+        m_MethodName: FinishButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

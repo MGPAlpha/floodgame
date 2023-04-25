@@ -8,6 +8,14 @@ public class SelectionManager : MonoBehaviour
     public static SelectionManager Main {get; private set;}
 
     public static List<SelectableItem> takenObjects {get; private set;} = new List<SelectableItem>();
+    public static List<string> takenObjectIds = new List<string>();
+
+    public static void LoadTakenIds() {
+        takenObjectIds = new List<string>();
+        foreach (SelectableItem item in takenObjects) {
+            takenObjectIds.Add(item.ItemId);
+        }
+    }
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.
